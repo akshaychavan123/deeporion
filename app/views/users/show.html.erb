@@ -1,0 +1,19 @@
+<h1> Showing users details </h1>
+
+<div> name : <%= @user.name %> </div> 
+<div> Task : <%= @user.task %> </div>
+<div> Start time : <%= @user.start_time %> </div>
+<div> End time : <%= @user.end_time %> </div>
+
+<div> <strong>  Status :</strong> 
+<%= @user.status %>  
+ <% User::STATUSES.each do |status| %> 
+    <%  if !@user.status.eql?(status.to_s) %>
+    <%= button_to status  , update_status_user_path(@user , status: status) , method: :patch %>
+    <% end %>
+ <% end %>
+ </div>
+
+<%= link_to "Go Back" , users_path %>
+<%= link_to "edit" , edit_user_path(@user) %>
+<%= button_to "delete" , @user , method: :delete %>

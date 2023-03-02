@@ -1,0 +1,19 @@
+<h1> Edit User </h1>
+
+<%= form_with model: @user do |form| %>
+   <div> <%= form.label :name %>
+    <%= form.text_field :name %> </div>
+
+    <div> <%= form.label :task %>
+    <%= form.text_field :task %> </div>
+
+    <div> <%= form.label :start_time %>
+    <%= form.text_field :start_time %> </div>
+
+    <div> <%= form.label :end_time %>
+    <%= form.text_field :end_time %> </div>
+
+    <%= form.submit %>
+
+    <% end %>
+

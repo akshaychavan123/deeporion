@@ -1,0 +1,21 @@
+<h1> Listing  all users </h1>
+
+ <%= link_to "New User", new_user_path %>
+ 
+ <table>
+ <tr> <th> Name </th>
+      <th> Show </th>
+      <th> edit  </th>
+      <th> delete </th>
+ </tr>
+
+ <% @users.each do |user| %>
+    <tr> <td> <%= user.name %> </td>
+        <td> <%= link_to "Show" , user %> </td>
+        <td> <%= link_to "edit" , edit_user_path(user) %> </td>
+        <td> <%= button_to "delete" , user , method: :delete %> </td> </tr>
+
+        <% end %> 
+</table>
+
+
